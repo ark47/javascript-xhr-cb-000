@@ -17,5 +17,7 @@ function getRepositories() {
 function getCommits(el) {
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
-  req.addEventListener("load", '')
+  req.addEventListener("load", showCommits)
+  req.open("GET", 'https://api.github.com/repos/ark47/' + name + '/commits');
+  req.send()
 }
